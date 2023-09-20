@@ -1,5 +1,3 @@
-// Bức xúc vcl, bằng một cách đb nào đấy đoạn code này dell có sai sót nhưng mother fuck kết quả trả về lại sai
-// Trong khi cũng đoạn code này nhưng chạy bằng DevC++ thì kết quả trả về đúng - FUCK MY LIFE !!!
 #include <stdio.h>
 #include <string.h>
 #include <math.h>

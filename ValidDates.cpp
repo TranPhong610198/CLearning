@@ -14,7 +14,7 @@ bool checkLeapYear(int n ){
 int main(){
      int test = 1;
     int year, month , date ;
-    printf("Input Date Month Year");
+    printf("Input Date Month Year : ");
     scanf("%d %d %d", &date, &month, &year);
     if (month<0 || date<0 || year<0){
         printf("Invalid Dates !!! Check your input.");

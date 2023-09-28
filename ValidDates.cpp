@@ -71,17 +71,8 @@ bool checkLeapYear(int n ){
     
 // }
 
-
-bool checkValidDates(int date, int month , int year){
-    // int test = 1;
-    // int year, month , date ;
-    // printf("Input Date Month Year : ");
-    // scanf("%d %d %d", &date, &month, &year);
-    if (month<1 || date<0 || year<0){
-        // printf("Invalid Dates !!! Check your input.");
-        return false;
-    }
-    else{
+int numDayinMonth(int month, int year){
+        int date;
         switch (month)
         {
         case 1:
@@ -91,52 +82,95 @@ bool checkValidDates(int date, int month , int year){
         case 8:
         case 10:
         case 12:
-            if (date >31)
-                // printf("Invalid date !!!");
-                return false;
-            else
-                // printf("Valid date !!!");
-                return true;
+            return date=31;
             break;
         case 4:
         case 6:
         case 9:
         case 11:
-            if (date > 30)
-                // printf("Invalid date !!!");
-                return false;
-            else
-                // printf("Valid date !!!");
-                return true;
+            return date=30;
             break;
         
         case 2:
             if(checkLeapYear(year)){
-                if( date > 29)
-                    // printf("Invalid date !!!");
-                    return false;
-                else
-                    // printf("Valid date !!!");
-                    return true;
+                return date=29;
             }
-            else{
-                if(date > 28)
-                    // printf("Invalid date !!!");
-                    return false;
-                else
-                    // printf("Valid date !!!");
-                    return true;
-            }
+            else
+                return date=28;
             break;
-        default:
-            // printf("Invalid date !!!");
-            return false;
-            break;
+        // default:
+        //     // printf("Invalid date !!!");
+        //     return false;
+        //     break;
         }
-        // if (test == 0)
-        //     printf("Invalid date !!!");
-        // else
-        //     printf("Valid date !!!");
+}
+
+bool checkValidDates(int date, int month , int year){
+    // int test = 1;
+    // int year, month , date ;
+    // printf("Input Date Month Year : ");
+    // scanf("%d %d %d", &date, &month, &year);
+    if (month<1 || month>12  || date<0 || year<0){
+        // printf("Invalid Dates !!! Check your input.");
+        return false;
+    }
+    else{
+        if (date > numDayinMonth(month, year))
+            return false;
+        else
+            return true;
+        // switch (month)
+        // {
+        // case 1:
+        // case 3:
+        // case 5:
+        // case 7:
+        // case 8:
+        // case 10:
+        // case 12:
+        //     if (date >31)
+        //         // printf("Invalid date !!!");
+        //         return false;
+        //     else
+        //         // printf("Valid date !!!");
+        //         return true;
+        //     break;
+        // case 4:
+        // case 6:
+        // case 9:
+        // case 11:
+        //     if (date > 30)
+        //         // printf("Invalid date !!!");
+        //         return false;
+        //     else
+        //         // printf("Valid date !!!");
+        //         return true;
+        //     break;
+        
+        // case 2:
+        //     if(checkLeapYear(year)){
+        //         if( date > 29)
+        //             // printf("Invalid date !!!");
+        //             return false;
+        //         else
+        //             // printf("Valid date !!!");
+        //             return true;
+        //     }
+        //     else{
+        //         if(date > 28)
+        //             // printf("Invalid date !!!");
+        //             return false;
+        //         else
+        //             // printf("Valid date !!!");
+        //             return true;
+        //     }
+        //     break;
+        // default:
+        //     // printf("Invalid date !!!");
+        //     return false;
+        //     break;
+        // }
+
     }
     
 }

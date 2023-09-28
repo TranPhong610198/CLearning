@@ -5,3 +5,4 @@
 
 bool checkLeapYear(int n);
 bool checkValidDates(int date, int month , int year);
+int numDayinMonth(int month, int year);

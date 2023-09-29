@@ -18,12 +18,16 @@ void Thenextday(int &date,int &month,int &year){
 
 int main(){
     int date, month, year;
+
+    // input valid date month year . 
     printf("Input Date Month Year : ");
     scanf("%d %d %d", &date, &month, &year);
     while(!checkValidDates(date, month, year)){
         printf("Invalid Date !!! Input Date Month Year Again: ");
         scanf("%d %d %d", &date, &month, &year);
     }
+
+    // do task 
     Thenextday(date, month, year);
     printf("The next day is : %d %d %d", date, month ,year);
     

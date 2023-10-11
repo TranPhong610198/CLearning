@@ -12,10 +12,10 @@ int CountByRecursion(int n){
 }
 
 // This function to check Narcisstic Number  ex: Narcisstic Number has 3 digits: 153 = (1 * 1 * 1) + (5 * 5 * 5) + (3 * 3 * 3).
-int NarcissticNum(int n){
-    int test = n; 
-	int temp = 0;
-    int j = CountByRecursion(n);
+double NarcissticNum(int n){
+    double test = n; 
+	double temp = 0;
+    double j = CountByRecursion(n);
     while(n!=0){
         temp = temp + (pow((n%10) , j));
         n=n/10;

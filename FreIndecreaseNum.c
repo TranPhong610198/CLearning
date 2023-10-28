@@ -1,41 +1,50 @@
-// #include <stdio.h>
-// #include <string.h>
-// #include <math.h>
-// #include <stdlib.h>
-// bool checkIndecreaseNUm(long long n){
-//     while(n>10){
-//         long long tempt=n%10;
-//         if (tempt < (n/10)%10)
-//             return false;
-//         else{
-//             n= n/10;
-//             return true;       
-//         }
-//     }
-// }
-// void frequence(long long arr[], int n){   
-//     for(int i=0; i<n; i++){
-//         int count = 0 ;
-//         for (int j=0; j<n; j++){
-//             if (arr[i] == arr[j])
-//                 count++;
-//             else
-//                 printf("%d %d ; ", arr[i], count);
-//     }
-// }
-// int main(){
-//     long long arr[] = {1,1,1,1,2,2,2,3,3,3,4,4,4,5,6,6,7,7,7} ;
-//     int n = sizeof(arr)/sizeof(arr[0]);
-//     frequence(arr,n);
-// }
-
 #include<stdio.h>
 #include<string.h>
 #include<math.h>
 #include<stdlib.h>
 #include<stdbool.h>
 int i, j;
+
+typedef struct number{
+    int value;
+    int fre;
+} num;
+
+int checkNum(int a){
+    int temp;
+    while (a>=10){
+        temp = a%10;
+        if ((a/10)%10 > temp) return 0;
+        a = a/10;
+    }
+    return 1;
+}
+
+int searchArr(num arr[], int n, int x){
+    for(i=0; i<n; i++){
+        if(arr[i].value == x)
+            return i;
+    }
+    return -1;
+}
+
 int main(){
-    char str[100][100];
-    
+    int x, n=0;
+    num arr[100001];
+    while((scanf("%d",&x))!=-1){
+        if (checkNum(x)){
+            int indx = searchArr(arr, n, x);
+            if (indx != -1){
+                arr[indx].fre ++;
+            }
+            else{
+                arr[n].value = x;
+                arr[n].fre = 1;
+                n++;
+            }
+        }        
+    }
+    for (i=0; i<n; i++){
+        printf("%d %d\n", arr[i].value, arr[i].fre);
+    }
 }

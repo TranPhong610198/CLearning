@@ -31,7 +31,7 @@ int searchArr(num arr[], int n, int x){
 int main(){
     int x, n=0;
     num arr[100001];
-    while((scanf("%d",&x))!=-1){
+    while(scanf("%d",&x)){
         if (checkNum(x)){
             int indx = searchArr(arr, n, x);
             if (indx != -1){
@@ -47,4 +47,5 @@ int main(){
     for (i=0; i<n; i++){
         printf("%d %d\n", arr[i].value, arr[i].fre);
     }
+    system("pause");
 }

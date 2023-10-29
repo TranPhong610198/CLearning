@@ -31,7 +31,8 @@ int searchArr(num arr[], int n, int x){
 int main(){
     int x, n=0;
     num arr[100001];
-    while(scanf("%d",&x)){
+    while(scanf("%d",&x)){  // when you want to stop this loop you need input a character like a, b, c ... blablabla
+                            // Because in scanf is %d so when you input a character the scanf("%d",&x) will return 0
         if (checkNum(x)){
             int indx = searchArr(arr, n, x);
             if (indx != -1){
